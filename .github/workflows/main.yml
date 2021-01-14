@@ -1,4 +1,4 @@
-name: CI
+name: cl 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
@@ -29,15 +29,16 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install # will run `yarn install` command
-          
-      -name: Build React App
-       run: yarn build
        
-      -name: Install Surge
-       run: npm install --global surge
        
-      -name: Deploy to  Surge
-       run: surge ./build fahadExpenseTrackingApp.surge.su ${{ secrets.SURGE_TOKEN }}
+      - name : Build React App
+        run  : yarn build
+       
+      - name: Install Surge
+        run : npm install --global surge
+       
+      - name: Deploy to  Surge
+        run : surge ./build fahadExpenseTrackingApp.surge.su ${{ secrets.SURGE_TOKEN }}
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!

@@ -39,7 +39,7 @@ jobs:
        
       - name: Deploy to  Surge
         run : surge ./build fahadAyyoubExpenseTrackingApp.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-      # Runs a single command using the runners shell
+      # Runs a single command using the runners shell yo
       - name: Run a one-line script
         run: echo Hello, world!
 
